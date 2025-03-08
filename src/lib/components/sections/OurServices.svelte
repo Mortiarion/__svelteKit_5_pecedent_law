@@ -126,16 +126,17 @@
 <section id="our-serveces">
 	<div class="container">
 		<div>
-			<h6 class="main-title">Наші послуги</h6>
+			<h6 class="main-title mb-24">Наші послуги</h6>
 
-			<div class="p-5">
+			<div class="category">
 				{#each Object.keys(ourServices) as category}
-					<button 
-                        type="button" 
-                        title={selectedCategory === category ? 'Сховати' : 'Показати'} 
-                        aria-label={selectedCategory === category ? 'Сховати' : 'Показати'} 
-                        onclick={() => toggleCategory(category)}
-                    >
+					<button
+						class={selectedCategory === category ? 'active' : ''}
+						type="button"
+						title={selectedCategory === category ? 'Сховати' : 'Показати'}
+						aria-label={selectedCategory === category ? 'Сховати' : 'Показати'}
+						onclick={() => toggleCategory(category)}
+					>
 						{category}
 					</button>
 				{/each}
@@ -144,14 +145,12 @@
 			{#if selectedCategory}
 				<div transition:slide>
 					<div transition:fade>
-						<ul class="p-5">
+						<ul>
 							{#each ourServices[selectedCategory] as service}
 								<li>
-									{service} 
+									{service}
 
-                                    <button type="button">
-                                        Отримати консультацію
-                                    </button>
+									<button type="button"> Отримати консультацію </button>
 								</li>
 							{/each}
 						</ul>
@@ -161,3 +160,75 @@
 		</div>
 	</div>
 </section>
+
+<style lang="postcss">
+	section {
+		padding-bottom: 120px;
+		
+		.active {
+			background-color: var(--color-dfdfdf);
+		}
+
+		> div {
+			> div {
+				> .category {
+					display: flex;
+					flex-wrap: wrap;
+					row-gap: 20px;
+					justify-content: center;
+					margin-bottom: 80px;
+
+					> button {
+						border: 1px solid var(--color-dfdfdf);
+						padding: 10px;
+						cursor: pointer;
+						transition: background-color 0.4s ease-in-out;
+						margin: 0;
+						line-height: 1;
+
+						&:hover {
+							@media (hover: hover) {
+								background-color: var(--color-cab18a);
+							}
+						}
+					}
+				}
+
+				ul {
+					display: flex;
+					flex-direction: column;
+					gap: 40px;
+					
+					> li {
+						display: flex;
+						align-items: center;
+						justify-content: space-between;
+						gap: 10px;
+						box-shadow:
+							28px 15px 13px rgba(138, 133, 133, 0.01),
+							16px 8px 11px rgba(138, 133, 133, 0.05),
+							7px 4px 8px rgba(138, 133, 133, 0.09),
+							2px 1px 4px rgba(138, 133, 133, 0.1);
+						border-radius: 20px;
+						padding: 20px 60px 20px 20px;
+
+						> button {
+							cursor: pointer;
+							background-color: var(--color-cab18a);
+							border-radius: 4px;
+							padding: 10px 20px;
+							color: var(--color-white);
+							transition: background-color 0.4s ease-in-out;
+
+							&:hover {
+								@media (hover: hover) {
+									background-color: var(--color-dfdfdf);
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+</style>

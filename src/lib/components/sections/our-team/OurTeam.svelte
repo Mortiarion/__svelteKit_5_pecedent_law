@@ -1,10 +1,10 @@
 <script lang="ts">
-	import TeamFive from './our-teams/TeamFive.svelte';
-	import TeamFour from './our-teams/TeamFour.svelte';
-	import TeamOne from './our-teams/TeamOne.svelte';
-	import TeamSix from './our-teams/TeamSix.svelte';
-	import TeamThree from './our-teams/TeamThree.svelte';
-	import TeamTwo from './our-teams/TeamTwo.svelte';
+	import TeamOne from './components/TeamOne.svelte';
+	import TeamTwo from './components/TeamTwo.svelte';
+	import TeamThree from './components/TeamThree.svelte';
+	import TeamFour from './components/TeamFour.svelte';
+	import TeamFive from './components/TeamFive.svelte';
+	import TeamSix from './components/TeamSix.svelte';
 
 	type TTeamInfo = {
 		teamOne: boolean;

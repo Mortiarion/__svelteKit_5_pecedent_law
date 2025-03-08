@@ -10,7 +10,7 @@
 					<h3 class="main-title mb-10">Про нас</h3>
 				</Fade>
 
-				<div class="flex flex-col gap-10">
+				<div class="flex flex-col gap-5">
 					<Fade>
 						<p>
 							Наше адвокатське об'єднання <span class="font-semibold">"Прецедент права"</span> існує

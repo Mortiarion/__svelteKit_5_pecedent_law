@@ -1,56 +1,70 @@
 @import 'tailwindcss';
-/* @plugin '@tailwindcss/typography'; */
+@plugin '@tailwindcss/typography';
+
 :root {
-    --color-cab18a:#CAB18A;
-    --color-5c524b: #5C524B;
-    --color-cccccc: #CCCCCC;
+	--color-cab18a: #cab18a;
+	--color-5c524b: #5c524b;
+	--color-cccccc: #cccccc;
+	--color-dfdfdf: #dfdfdf;
+	--font-roboto: 'Roboto', sans-serif;
+	--font-source: 'Source Serif 4', serif;
+	--color-white: #ffffff;
 }
+
 @layer utilities {
-    .font-roboto {
-        font-family: 'Roboto', sans-serif;
-    }
+	.font-roboto {
+		font-family: var(--font-roboto);
+	}
 
-    .font-source {
-        font-family: "Source Serif 4", serif;
-    }
+	.font-source {
+		font-family: var(--font-source);
+	}
 
-    .bg-header-img {
-        background: url('/img/header-2xl.jpg') no-repeat center/cover; 
-    }
+	.bg-header-img {
+		background: url('/img/header-2xl.jpg') no-repeat center/cover;
+	}
 
-    .color-cab18a {
-        color: var(--color-cab18a);
-    }
+	.bg-footer-img {
+		background: url('/img/footer-bg-img.jpg') no-repeat center/cover;
+	}
 
-    .color-5c524b {
-        color: var(--color-5c524b);
-    }
+	.color-cab18a {
+		color: var(--color-cab18a);
+	}
 
-    .color-cccccc {
-        color: var(--color-cccccc);
-    }
+	.color-5c524b {
+		color: var(--color-5c524b);
+	}
 
-    .main-title {
-        @apply text-6xl font-semibold text-center; 
-        font-family: "Source Serif 4", serif;
-    }
+	.color-cccccc {
+		color: var(--color-cccccc);
+	}
 
-    .bg-about-as {
-        background: linear-gradient(360deg, #EEE7DA 4.75%, rgba(255, 255, 255, 0.1) 100%);
-    }
+	.border-color-dfdfdf {
+		border-color: var(--color-dfdfdf);
+	}
 
-    .team-title {
-        @apply text-3xl font-semibold;
-        font-family: "Source Serif 4", serif;
-    }
+	.main-title {
+		@apply text-center text-6xl font-semibold;
+		font-family: var(--font-source);
+	}
 
-    .color-292424 {
-        color: #292424;
-    }
+	.bg-about-as {
+		background: linear-gradient(360deg, #eee7da 4.75%, rgba(255, 255, 255, 0.1) 100%);
+	}
+
+	.team-title {
+		@apply text-3xl font-semibold;
+		font-family: var(--font-source);
+	}
+
+	.color-292424 {
+		color: #292424;
+	}
 }
 
 @layer base {
-    .container {
-        @apply px-5 mx-auto;
-    }
+	.container {
+		@apply mx-auto px-20;
+	}
 }
