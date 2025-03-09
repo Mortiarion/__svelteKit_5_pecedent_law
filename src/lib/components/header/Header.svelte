@@ -1,35 +1,63 @@
 <script lang="ts">
-	import { onMount } from 'svelte';
+	import { onMount, onDestroy } from 'svelte';
 	import Location from './components/Location.svelte';
 	import Logo from './components/Logo.svelte';
 	import NavigationMenu from './components/NavigationMenuLink.svelte';
 	import SocialMenuLink from './components/SocialMenuLink.svelte';
 	import { slide } from 'svelte/transition';
 
-	let startScrolly = $state(0);
-	let isHidden = $state(true);
-	let scrollThreshold = $state(300);
-	let minScrollDistance = $state(20);
+	let isHidden = $state(false);
+	const scrollThreshold = 300;
+	let lastScrollY = 0;
+	let ticking = false;
+	let timeoutId: number | null = null;
+	let forceCheckInterval: number | null = null;
 
 	function handleScroll() {
-		const currentScrolly = Math.round(window.scrollY);
-		console.log('start scroll', currentScrolly);
-		if (Math.abs(currentScrolly - startScrolly) > minScrollDistance) {
-			startScrolly = currentScrolly;
-			console.log('if cur scroll',currentScrolly);
-			if (currentScrolly > scrollThreshold) {
-				isHidden = false;
-			} else {
-				isHidden = true;
+		if (ticking) return;
+
+		window.requestAnimationFrame(() => {
+			const currentScrollY = window.scrollY;
+			const scrollDifference = currentScrollY - lastScrollY;
+
+			// Додали перевірку для малих змін (10px)
+			if (Math.abs(scrollDifference) > 10) {
+				// Скрол вниз → ховаємо
+				if (currentScrollY > scrollThreshold && scrollDifference > 0) {
+					if (!isHidden) isHidden = true;
+				} 
+				// Скрол вверх → показуємо (з невеликою затримкою)
+				else if (currentScrollY < scrollThreshold && scrollDifference < 0) {
+					if (isHidden) {
+						if (timeoutId) clearTimeout(timeoutId);
+						timeoutId = setTimeout(() => (isHidden = false), 200);
+					}
+				}
 			}
-		}
-		startScrolly = currentScrolly;
+
+			lastScrollY = currentScrollY;
+			ticking = false;
+		});
+
+		ticking = true;
+	}
+
+	// Додаємо перевірку кожні 200ms (щоб спрацювало навіть при повільному скролі)
+	function startForceCheck() {
+		forceCheckInterval = setInterval(() => {
+			handleScroll();
+		}, 200);
 	}
 
 	onMount(() => {
 		window.addEventListener('scroll', handleScroll);
+		startForceCheck();
 
-		return () => window.removeEventListener('scroll', handleScroll);
+		return () => {
+			window.removeEventListener('scroll', handleScroll);
+			if (timeoutId) clearTimeout(timeoutId);
+			if (forceCheckInterval) clearInterval(forceCheckInterval);
+		};
 	});
 </script>
 
@@ -41,7 +69,7 @@
 			<SocialMenuLink />
 		</nav>
 
-		{#if isHidden}
+		{#if !isHidden}
 			<div class="mb-14" transition:slide>
 				<Location />
 			</div>
