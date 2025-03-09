@@ -2,7 +2,9 @@
 	import LocationIcon from '$lib/icons/LocationIcon.svelte';
 </script>
 
-<div class="mb-14 flex gap-3">
+<hr class="color-5c524b mb-6" />
+
+<div class="flex gap-3">
 	<i>
 		<LocationIcon />
 	</i>

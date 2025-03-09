@@ -6,6 +6,10 @@
 
 	let element: HTMLElement;
 
+	let classes: string = $state('');
+
+	let observer: IntersectionObserver;
+
 	const opacity = new Tween(0, {
 		duration: 700
 	});
@@ -19,8 +23,6 @@
 			}
 		});
 	};
-
-	let observer: IntersectionObserver;
 
 	onMount(() => {
 		$effect(() => {
@@ -37,6 +39,6 @@
 	});
 </script>
 
-<div bind:this={element} style:opacity={opacity.current}>
+<div bind:this={element} class={classes} style:opacity={opacity.current}>
 	{@render children()}
 </div>
