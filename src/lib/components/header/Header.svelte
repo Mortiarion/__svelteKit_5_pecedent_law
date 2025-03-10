@@ -4,74 +4,65 @@
 	import Logo from './components/Logo.svelte';
 	import NavigationMenu from './components/NavigationMenuLink.svelte';
 	import SocialMenuLink from './components/SocialMenuLink.svelte';
-	import { slide } from 'svelte/transition';
+	import { slide, fade } from 'svelte/transition';
 
-	let isHidden = $state(false);
-	const scrollThreshold = 300;
-	let lastScrollY = 0;
-	let ticking = false;
-	let timeoutId: number | null = null;
-	let forceCheckInterval: number | null = null;
+	let isShowLocation = true;
+	let lastScrollY = window.scrollY;
+	let scrollDirection = "up"; // "up" | "down"
+	let scrollTimeout: number;
+	let isAnimating = false;
 
 	function handleScroll() {
-		if (ticking) return;
+		const currentScrollY = window.scrollY;
+		const scrollDiff = currentScrollY - lastScrollY;
 
-		window.requestAnimationFrame(() => {
-			const currentScrollY = window.scrollY;
-			const scrollDifference = currentScrollY - lastScrollY;
+		// Визначаємо напрямок
+		if (scrollDiff > 0) {
+			scrollDirection = "down";
+		} else if (scrollDiff < 0) {
+			scrollDirection = "up";
+		}
 
-			// Додали перевірку для малих змін (10px)
-			if (Math.abs(scrollDifference) > 10) {
-				// Скрол вниз → ховаємо
-				if (currentScrollY > scrollThreshold && scrollDifference > 0) {
-					if (!isHidden) isHidden = true;
-				} 
-				// Скрол вверх → показуємо (з невеликою затримкою)
-				else if (currentScrollY < scrollThreshold && scrollDifference < 0) {
-					if (isHidden) {
-						if (timeoutId) clearTimeout(timeoutId);
-						timeoutId = setTimeout(() => (isHidden = false), 200);
-					}
-				}
+		// Debounce - щоб не було зайвих викликів
+		clearTimeout(scrollTimeout);
+		scrollTimeout = setTimeout(() => {
+			// Логіка показу / приховування
+			if (scrollDirection === "down" && currentScrollY >= 200 && !isAnimating) {
+				isAnimating = true;
+				isShowLocation = false;
+				setTimeout(() => (isAnimating = false), 500); // Блокуємо зміну стану на 500мс
+			} else if (scrollDirection === "up" && currentScrollY < 200 && !isAnimating) {
+				isAnimating = true;
+				isShowLocation = true;
+				setTimeout(() => (isAnimating = false), 500);
 			}
 
 			lastScrollY = currentScrollY;
-			ticking = false;
-		});
-
-		ticking = true;
-	}
-
-	// Додаємо перевірку кожні 200ms (щоб спрацювало навіть при повільному скролі)
-	function startForceCheck() {
-		forceCheckInterval = setInterval(() => {
-			handleScroll();
-		}, 200);
+		}, 100); // Затримка 100 мс
 	}
 
 	onMount(() => {
 		window.addEventListener('scroll', handleScroll);
-		startForceCheck();
-
 		return () => {
 			window.removeEventListener('scroll', handleScroll);
-			if (timeoutId) clearTimeout(timeoutId);
-			if (forceCheckInterval) clearInterval(forceCheckInterval);
+			clearTimeout(scrollTimeout);
 		};
 	});
 </script>
 
 <header class="bg-header-img sticky top-0 z-10 text-white">
-	<div class="container">
+	<div class="relative container">
 		<nav class="flex items-center pt-7 pb-4">
 			<Logo />
 			<NavigationMenu />
 			<SocialMenuLink />
 		</nav>
-
-		{#if !isHidden}
+		<!-- <button onclick={toggleLocation}>/sdafdsaf</button> -->
+		{#if isShowLocation}
 			<div class="mb-14" transition:slide>
-				<Location />
+				<div transition:fade>
+					<Location />
+				</div>
 			</div>
 		{/if}
 	</div>
