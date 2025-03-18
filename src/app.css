@@ -65,6 +65,6 @@
 
 @layer base {
 	.container {
-		@apply mx-auto px-20;
+		@apply mx-auto px-20 max-lg:px-10 max-md:px-8;
 	}
 }

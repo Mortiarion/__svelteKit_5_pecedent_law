@@ -8,7 +8,7 @@
 	import ViberIcon from '$lib/icons/ViberIcon.svelte';
 </script>
 
-<ul class="flex gap-5 items-centerb ml-20">
+<ul class="flex gap-5 items-center ml-20 max-xl:ml-auto">
 	<li>
 		<a href="tel:+380930343344" title="Зателефонуйте нам" aria-label="Зателефонуйте нам">
 			<TelephoneIcon />
@@ -16,13 +16,13 @@
 	</li>
 
 	<li>
-		<a href="https://t.me/Justitia_od" title="Ми в телеграмі" aria-label="Ми в телеграмі">
+		<a href="https://t.me/Justitia_od" title="Ми в телеграм" aria-label="Ми в телеграм">
 			<TelegramIcon />
 		</a>
 	</li>
 
 	<li>
-		<a href="viber://chat?number=%2B380930343344" title="Ми в вайбері" aria-label="Ми в вайбері">
+		<a href="viber://chat?number=%2B380930343344" title="Ми в вайбер" aria-label="Ми в вайбер">
 			<ViberIcon />
 		</a>
 	</li>
