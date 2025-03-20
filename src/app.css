@@ -45,7 +45,7 @@
 	}
 
 	.main-title {
-		@apply text-center text-6xl font-semibold;
+		@apply text-center text-6xl font-semibold max-xl:text-5xl max-md:text-4xl;
 		font-family: var(--font-source);
 	}
 
@@ -63,8 +63,8 @@
 	}
 }
 
-/* @layer base {
+@layer base {
 	.container {
 		@apply mx-auto px-20 max-lg:px-10 max-md:px-8;
 	}
-} */
+}

@@ -44,7 +44,7 @@
 </script>
 
 <header class="bg-header-img sticky top-0 z-10 text-white">
-	<div class="container mx-auto px-20 max-lg:px-10 max-md:px-8">
+	<div class="container">
 		<nav class="relative items-center mt-7 mb-4 flex max-lg:flex-col">
 			<button
 				bind:this={burgerButton}

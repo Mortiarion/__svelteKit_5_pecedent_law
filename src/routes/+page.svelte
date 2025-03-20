@@ -7,7 +7,7 @@
 <main class="flex-auto">
 	<AboutUs />
 
-	<!-- <OurTeam /> -->
+	<OurTeam />
 	
-	<!-- <OurServices /> -->
+	<OurServices />
 </main>

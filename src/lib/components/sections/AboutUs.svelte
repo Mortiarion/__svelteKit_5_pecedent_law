@@ -2,12 +2,12 @@
 	import Fade from '../Fade.svelte';
 </script>
 
-<section id="about-us" class="bg-about-as pt-20 pb-11">
-	<div class="container mx-auto px-20 max-lg:px-10 max-md:px-8">
+<section id="about-us" class="bg-about-as pt-20 pb-11 max-xl:pt-10">
+	<div class="container">
 		<div class="flex gap-28 justify-between max-xl:flex-col">
 			<article class="color-292424 w-1/2 max-xl:w-full">
 				<Fade>
-					<h3 class="main-title mb-10">Про нас</h3>
+					<h3 class="main-title mb-10 max-xl:mb-5">Про нас</h3>
 				</Fade>
 
 				<div class="flex flex-col gap-5">
