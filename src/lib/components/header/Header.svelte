@@ -5,14 +5,20 @@
 	import NavigationMenu from './components/NavigationMenuLink.svelte';
 	import SocialMenuLink from './components/SocialMenuLink.svelte';
 	import { slide, fade } from 'svelte/transition';
-	import BurgerIcon from '$lib/icons/BurgerIcon.svelte';
-	
+
 	let isLocation = $state(true);
 
 	let isBurger = $state(false);
+	let btn: HTMLElement;
 
 	function toggleBurger() {
 		isBurger = !isBurger;
+
+		if (isBurger) {
+			btn.classList.add('open');
+		} else {
+			btn.classList.remove('open');
+		}
 	}
 
 	onMount(() => {
@@ -30,45 +36,51 @@
 
 			onDestroy(() => observer.disconnect());
 		}
+
+		if (window.innerWidth >= 1024) {
+			isBurger = true;
+		}
 	});
 </script>
 
 <header class="bg-header-img sticky top-0 z-10 text-white">
-	<div class="container hidden max-lg:block">
-		<nav class="mt-7 mb-4 flex flex-col">
-			<div class="relative flex justify-center">
+	<div class="container">
+		<nav class="relative mt-7 mb-4 flex max-lg:flex-col">
+			<button
+				bind:this={btn}
+				class="burger absolute top-7 left-0 hidden h-6 w-6 cursor-pointer max-lg:flex max-lg:flex-col max-lg:gap-1.5"
+				type="button"
+				aria-label={isBurger ? ' Сховати' : 'Показати'}
+				title={isBurger ? ' Сховати' : 'Показати'}
+				onclick={toggleBurger}
+				class:is-open={isBurger}
+			>
+				<div class="line h-0.5 rounded-full w-full bg-white transition-transform duration-300"></div>
+				<div class="line h-0.5 rounded-full w-full bg-white transition-transform duration-300"></div>
+				<div class="line h-0.5 rounded-full w-full bg-white transition-transform duration-300"></div>
+			</button>
 
-				<button class=" absolute left-0 top-1/3" type="button" aria-label="Показати" title="Показати" onclick={toggleBurger}>
-					<i>
-						<BurgerIcon />
-					</i>
-				</button>
-	
-				<Logo />
-			</div>
+			<Logo />
 
 			{#if isBurger}
-				<div transition:slide>
-					<div transition:fade>
+				<div class="ml-auto max-lg:ml-0 max-lg:mt-5" transition:slide>
+					<div
+						class="flex flex-wrap justify-end gap-5 max-lg:flex-col max-lg:gap-7"
+						transition:fade
+					>
 						<NavigationMenu />
-						<Location />
 						<SocialMenuLink />
+
+						<div class="hidden max-lg:block">
+							<Location />
+						</div>
 					</div>
 				</div>
 			{/if}
 		</nav>
-	
-	</div>
-
-	<div class="relative container max-lg:hidden">
-		<nav class="mt-7 mb-4 flex flex-wrap items-center lg:mt-5">
-			<Logo />
-			<NavigationMenu />
-			<SocialMenuLink />
-		</nav>
 
 		{#if isLocation}
-			<div class="mb-14 max-lg:mb-7" transition:slide>
+			<div class="mb-14 max-lg:mb-7 max-lg:hidden" transition:slide>
 				<div transition:fade>
 					<Location />
 				</div>
@@ -76,3 +88,19 @@
 		{/if}
 	</div>
 </header>
+
+<style lang="postcss">
+	
+
+	.burger.is-open .line:nth-child(1) {
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	.burger.is-open .line:nth-child(2) {
+		opacity: 0;
+	}
+
+	.burger.is-open .line:nth-child(3) {
+		transform: translateY(-8px) rotate(-45deg);
+	}
+</style>

@@ -1,4 +1,4 @@
-<ul class="ml-auto flex gap-10 text-2xl whitespace-nowrap ">
+<ul class="flex gap-10 text-2xl whitespace-nowrap max-lg:flex-col max-lg:gap-3 max-lg:text-xl max-md:text-base">
 	<li>
 		<a
 			href="/#about-us"

@@ -8,7 +8,7 @@
 	import ViberIcon from '$lib/icons/ViberIcon.svelte';
 </script>
 
-<ul class="flex gap-5 items-center ml-20 max-xl:ml-auto">
+<ul class="flex gap-5 items-center ml-20 max-lg:m-0 max-sm:gap-3 max-sm:flex-wrap max-sm:justify-center">
 	<li>
 		<a href="tel:+380930343344" title="Зателефонуйте нам" aria-label="Зателефонуйте нам">
 			<TelephoneIcon />

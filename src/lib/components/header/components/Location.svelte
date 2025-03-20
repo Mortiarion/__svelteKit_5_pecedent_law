@@ -10,8 +10,15 @@
 	</i>
 
 	<div class="flex flex-col">
-		<span class="color-cab18a"> Місцезнаходження </span>
+		<span class="color-cab18a max-md:text-sm"> Місцезнаходження </span>
 
-		<span class="font-source text-3xl font-semibold"> м.Одеса вул.Канатна, 68 </span>
+		<a
+			class="font-source text-3xl font-semibold max-lg:text-2xl max-md:text-xl"
+			target="_blank"
+			title="Подивитись на мапі"
+			aria-label="Подивитись на мапі"
+			rel="noopener noreferrer"
+			href="https://maps.app.goo.gl/ggpQcKQ3uoqvnwid9">м.Одеса вул.Канатна, 68</a
+		>
 	</div>
 </div>
