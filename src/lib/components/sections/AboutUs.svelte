@@ -3,7 +3,7 @@
 </script>
 
 <section id="about-us" class="bg-about-as pt-20 pb-11">
-	<div class="container">
+	<div class="container mx-auto px-20 max-lg:px-10 max-md:px-8">
 		<div class="flex gap-28 justify-between max-xl:flex-col">
 			<article class="color-292424 w-1/2 max-xl:w-full">
 				<Fade>
