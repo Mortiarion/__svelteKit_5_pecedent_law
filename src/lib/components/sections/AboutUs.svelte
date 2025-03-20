@@ -4,8 +4,8 @@
 
 <section id="about-us" class="bg-about-as pt-20 pb-11">
 	<div class="container">
-		<div class="flex gap-28 justify-between">
-			<article class="color-292424 w-1/2">
+		<div class="flex gap-28 justify-between max-xl:flex-col">
+			<article class="color-292424 w-1/2 max-xl:w-full">
 				<Fade>
 					<h3 class="main-title mb-10">Про нас</h3>
 				</Fade>
@@ -68,9 +68,9 @@
 			</article>
 
 			<Fade>
-				<picture class='w-1/2'>
+				<picture class='w-1/2 max-lg:hidden'>
 					<source srcset="./img/about-as.webp" type="image/webp" />
-					<img loading="lazy" width="544" height="762" src="./img/about-as.jpg" alt="justice" />
+					<img class="h-full max-xl:mx-auto" loading="lazy" width="544" height="762" src="./img/about-as.jpg" alt="justice" />
 				</picture>
 			</Fade>
 		</div>

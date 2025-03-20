@@ -9,15 +9,15 @@
 	let isLocation = $state(true);
 
 	let isBurger = $state(false);
-	let btn: HTMLElement;
+	let burgerButton: HTMLElement;
 
 	function toggleBurger() {
 		isBurger = !isBurger;
 
 		if (isBurger) {
-			btn.classList.add('open');
+			burgerButton.classList.add('open');
 		} else {
-			btn.classList.remove('open');
+			burgerButton.classList.remove('open');
 		}
 	}
 
@@ -29,7 +29,7 @@
 				([entry]) => {
 					isLocation = entry.isIntersecting;
 				},
-				{ threshold: 0.1 }
+				{ threshold: 0.2 }
 			);
 
 			observer.observe(aboutUsSection);
@@ -45,9 +45,9 @@
 
 <header class="bg-header-img sticky top-0 z-10 text-white">
 	<div class="container">
-		<nav class="relative mt-7 mb-4 flex max-lg:flex-col">
+		<nav class="relative items-center mt-7 mb-4 flex max-lg:flex-col">
 			<button
-				bind:this={btn}
+				bind:this={burgerButton}
 				class="burger absolute top-7 left-0 hidden h-6 w-6 cursor-pointer max-lg:flex max-lg:flex-col max-lg:gap-1.5"
 				type="button"
 				aria-label={isBurger ? ' Сховати' : 'Показати'}
@@ -90,7 +90,6 @@
 </header>
 
 <style lang="postcss">
-	
 
 	.burger.is-open .line:nth-child(1) {
 		transform: translateY(8px) rotate(45deg);
