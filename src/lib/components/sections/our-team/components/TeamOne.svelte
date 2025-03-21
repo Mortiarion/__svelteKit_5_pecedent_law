@@ -7,44 +7,51 @@
 </script>
 
 <Fade>
-	<div class="flex justify-between">
+	<div class="team-container">
 		<picture class="max-w-full">
 			<source srcset="/img/our-team-one.webp" type="image/webp" />
-			<img loading="lazy" width="510" height="596" src="/img/our-team-one.jpg" alt="Team one" />
+			<img
+				class="team-img"
+				loading="lazy"
+				width="510"
+				height="596"
+				src="/img/our-team-one.jpg"
+				alt="Team one"
+			/>
 		</picture>
 
-		<div class="color-292424 w-1/2">
-			<h6 class="team-title mb-2.5">Діана Лісіна</h6>
+		<div class="color-292424 w-1/2 max-lg:w-full max-lg:text-center">
+			<h6 class="team-title">Діана Лісіна</h6>
 
-			<span class="color-cab18a mb-7 inline-block text-xl"> Адвокат </span>
+			<span class="team-subtitle"> Адвокат </span>
 
-			<p class="mb-5 text-center 2xl:text-left">
+			<p class="our-team-p">
 				<span class="font-semibold">Професійний досвід:</span>
-				<br class="hidden 2xl:block" />
+				<br />
 				Діана Лісіна веде адвокатську практику з початку 2022 року. Незважаючи на відносно короткий термін
 				професійної діяльності, вона вже встигла зарекомендувати себе як висококваліфікований фахівець.
 			</p>
 
 			<div class="max-lg:hidden">
-				<p class="mb-5 text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Спеціалізація:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Діана спеціалізується на корпоративних спорах та договірному праві,а також на судових процесах
 					з адміністративного права. Її експертні знання та досвід допомогли врятувати не одне підприємство
 					від правових труднощів.
 				</p>
 
-				<p class="mb-5 text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Особисті якості:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Нехай Вас не бентежить вік та привабливість Діани. Вона є відмінним спеціалістом, яка відзначається
 					виконавчістю, чесністю та порядністю. Її професіоналізм, уважність до деталей та відданість
 					своїй роботі забезпечують успішний результат кожної справи, якою вона займається.
 				</p>
 
-				<p class="text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Чому обрати Діану:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Діана Лісіна - це надійний партнер у вирішенні юридичних питань.Її компетентність, відповідальність
 					та прагнення досягати найкращих результатів роблять її незамінною для клієнтів, які шукають
 					надійну правову підтримку.
@@ -55,25 +62,25 @@
 				{#if isShowInfo}
 					<div transition:slide>
 						<div transition:fade>
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Спеціалізація:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Діана спеціалізується на корпоративних спорах та договірному праві,а також на судових
 								процесах з адміністративного права. Її експертні знання та досвід допомогли врятувати
 								не одне підприємство від правових труднощів.
 							</p>
 
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Особисті якості:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Нехай Вас не бентежить вік та привабливість Діани. Вона є відмінним спеціалістом, яка
 								відзначається виконавчістю, чесністю та порядністю. Її професіоналізм, уважність до деталей
 								та відданість своїй роботі забезпечують успішний результат кожної справи, якою вона займається.
 							</p>
 
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Чому обрати Діану:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Діана Лісіна - це надійний партнер у вирішенні юридичних питань.Її компетентність, відповідальність
 								та прагнення досягати найкращих результатів роблять її незамінною для клієнтів, які шукають
 								надійну правову підтримку.

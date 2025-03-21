@@ -54,12 +54,32 @@
 	}
 
 	.team-title {
-		@apply text-3xl font-semibold;
+		@apply text-3xl font-semibold mb-2.5 max-md:mb-1 max-lg:text-2xl max-md:text-xl;
 		font-family: var(--font-source);
+	}
+
+	.team-subtitle {
+		@apply mb-7 inline-block text-xl max-lg:text-lg max-md:text-base;
+		color: var(--color-cab18a);
+	}
+
+	.team-container {
+		@apply flex justify-between gap-40 px-5 max-xl:gap-20 max-lg:flex-col max-lg:items-center;
 	}
 
 	.color-292424 {
 		color: #292424;
+	}
+
+	.our-team-p {
+		@apply mb-5 text-left max-lg:text-center;
+	}
+
+	.team-img {
+		max-width: 510px;
+		width: 100%;
+		max-height: 596px;
+		height: 100%;
 	}
 }
 

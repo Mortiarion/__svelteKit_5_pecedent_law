@@ -7,15 +7,15 @@
 </script>
 
 <Fade>
-	<div class="flex justify-between">
-		<div class="color-292424 w-1/2">
-			<h6 class="team-title mb-2.5">Віктор Бардук</h6>
+	<div class="team-container max-lg:flex-col-reverse">
+		<div class="color-292424 w-1/2 max-lg:w-full max-lg:text-center">
+			<h6 class="team-title">Віктор Бардук</h6>
 
-			<span class="color-cab18a mb-7 inline-block text-xl"> Адвокат </span>
+			<span class="team-subtitle"> Адвокат </span>
 
-			<p class="mb-5 text-center 2xl:text-left">
+			<p class="our-team-p">
 				<span class="font-semibold">Професійний досвід:</span>
-				<br class="hidden 2xl:block" />
+				<br />
 				Віктор Бардук веде адвокатську практику з 2012 року. До цього він тривалий час працював у правоохоронних
 				органах України. Його кар'єра включає посади старшого оперативного уповноваженого в органах карного
 				розшуку в складі Міністерства внутрішніх справ України, старшого слідчого та старшого оперативного
@@ -23,23 +23,23 @@
 			</p>
 
 			<div class="max-lg:hidden">
-				<p class="mb-5 text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Спеціалізація:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Віктор спеціалізується на кримінальному процесі. Завдяки його глибоким знанням та досвіду,
 					багато його клієнтів отримали виправдовувальні вироки.
 				</p>
 
-				<p class="mb-5 text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Досвід:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Загальний стаж юридичної роботи Віктора складає понад 25 років, що свідчить про його високу
 					компетентність та надійність як адвоката.
 				</p>
 
-				<p class="text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Чому обрати Віктора:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					З таким адвокатом ви під надійним захистом. Віктор Бардук забезпечує професійний підхід та
 					індивідуальну увагу до кожного клієнта, що гарантує успішний результат справи.
 				</p>
@@ -49,23 +49,23 @@
 				{#if isShowInfo}
 					<div transition:slide>
 						<div transition:fade>
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Спеціалізація:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Віктор спеціалізується на кримінальному процесі. Завдяки його глибоким знанням та досвіду,
 								багато його клієнтів отримали виправдовувальні вироки.
 							</p>
 
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Досвід:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Загальний стаж юридичної роботи Віктора складає понад 25 років, що свідчить про його
 								високу компетентність та надійність як адвоката.
 							</p>
 
-							<p class="text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Чому обрати Віктора:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								З таким адвокатом ви під надійним захистом. Віктор Бардук забезпечує професійний підхід
 								та індивідуальну увагу до кожного клієнта, що гарантує успішний результат справи.
 							</p>
@@ -97,7 +97,14 @@
 
 		<picture class="max-w-full">
 			<source srcset="/img/our-team-two.webp" type="image/webp" />
-			<img loading="lazy" width="510" height="596" src="/img/our-team-two.jpg" alt="Team two" />
+			<img
+				class="team-img"
+				loading="lazy"
+				width="510"
+				height="596"
+				src="/img/our-team-two.jpg"
+				alt="Team two"
+			/>
 		</picture>
 	</div>
 </Fade>
