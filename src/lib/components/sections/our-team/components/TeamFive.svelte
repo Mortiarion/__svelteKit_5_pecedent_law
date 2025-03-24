@@ -7,44 +7,51 @@
 </script>
 
 <Fade>
-	<div class="flex justify-between">
+	<div class="team-container">
 		<picture class="max-w-full">
 			<source srcset="/img/our-team-five.webp" type="image/webp" />
-			<img loading="lazy" width="510" height="596" src="/img/our-team-five.jpg" alt="Team five" />
+			<img
+				class="team-img"
+				loading="lazy"
+				width="510"
+				height="596"
+				src="/img/our-team-five.jpg"
+				alt="Team five"
+			/>
 		</picture>
 
-		<div class="color-292424 w-1/2">
-			<h6 class="team-title mb-2.5">Лілія Братим</h6>
+		<div class="color-292424 w-1/2 max-lg:w-full max-lg:text-center">
+			<h6 class="team-title">Лілія Братим</h6>
 
-			<span class="color-cab18a mb-7 inline-block text-xl">Старший консультант</span>
+			<span class="team-subtitle">Старший консультант</span>
 
-			<p class="mb-5 text-center 2xl:text-left">
+			<p class="our-team-p">
 				<span class="font-semibold">Професійний досвід:</span>
-				<br class="hidden 2xl:block" />
+				<br />
 				Лілія Братим розпочала свою юридичну кар’єру у 2004 році у відділі економіки слідчого відділу
 				Міністерства внутрішніх справ України. За час своєї кар’єри вона обіймала різні посади, включаючи
 				старшого слідчого та роботу в міграційній службі України.
 			</p>
 
-			<div class="max-lg:hidden">
-				<p class="mb-5 text-center 2xl:text-left">
+			<div class="max-xl:hidden">
+				<p class="our-team-p">
 					<span class="font-semibold">Спеціалізація:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Лілія спеціалізується на міжнародному праві, зовнішньоекономічній діяльності, міграційному
 					праві, консульських і дипломатичних зносинах. Вона також має великий досвід у сфері бізнесу
 					та електронної комерції, включаючи крипто право та ІТ право.
 				</p>
 
-				<p class="mb-5 text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Досвід:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					З 20-річним стажем у юридичній практиці, Лілія втілює юридичну майстерність та міжнародний
 					досвід. Вона не тільки розуміє закони, але й передбачає їх вплив на ваш бізнес та життя.
 				</p>
 
-				<p class="text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Чому обрати Лілію?</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Лілія володіє кількома мовами, включаючи англійську, німецьку, турецьку та грузинську, і є
 					стратегічним партнером у сфері міжнародного права, економіки та бізнесу. Вона має глибокі знання
 					та практичний досвід у Європейському Союзі, країнах Кавказу та Азії, зокрема у бізнесі та електронній
@@ -63,26 +70,26 @@
 			<div class="max-md:visible">
 				{#if isShowInfo}
 					<div transition:slide>
-						<div transition:fade>
-							<p class="mb-5 text-center 2xl:text-left">
+						<div class="flex flex-col" transition:fade>
+							<p class="our-team-p">
 								<span class="font-semibold">Спеціалізація:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Діана спеціалізується на корпоративних спорах та договірному праві,а також на судових
 								процесах з адміністративного права. Її експертні знання та досвід допомогли врятувати
 								не одне підприємство від правових труднощів.
 							</p>
 
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Особисті якості:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Нехай Вас не бентежить вік та привабливість Діани. Вона є відмінним спеціалістом, яка
 								відзначається виконавчістю, чесністю та порядністю. Її професіоналізм, уважність до деталей
 								та відданість своїй роботі забезпечують успішний результат кожної справи, якою вона займається.
 							</p>
 
-							<p class="mb-5 text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Чому обрати Діану:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Діана Лісіна - це надійний партнер у вирішенні юридичних питань.Її компетентність, відповідальність
 								та прагнення досягати найкращих результатів роблять її незамінною для клієнтів, які шукають
 								надійну правову підтримку.
@@ -92,7 +99,7 @@
 				{/if}
 
 				<button
-					class="cursor-pointer lg:hidden"
+					class="cursor-pointer xl:hidden"
 					onclick={toggleInfo}
 					type="button"
 					aria-label={isShowInfo ? 'Показати інформацію' : 'Сховати інформацію'}

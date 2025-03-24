@@ -7,7 +7,7 @@
 </script>
 
 <Fade>
-	<div class="team-container max-lg:flex-col-reverse">
+	<div class="team-container-reverse ">
 		<div class="color-292424 w-1/2 max-lg:w-full max-lg:text-center">
 			<h6 class="team-title">Віктор Бардук</h6>
 
@@ -22,7 +22,7 @@
 				уповноваженого податкової міліції.
 			</p>
 
-			<div class="max-lg:hidden">
+			<div class="max-xl:hidden">
 				<p class="our-team-p">
 					<span class="font-semibold">Спеціалізація:</span>
 					<br />
@@ -48,7 +48,7 @@
 			<div class="max-md:visible">
 				{#if isShowInfo}
 					<div transition:slide>
-						<div transition:fade>
+						<div class="flex flex-col" transition:fade>
 							<p class="our-team-p">
 								<span class="font-semibold">Спеціалізація:</span>
 								<br />
@@ -74,7 +74,7 @@
 				{/if}
 
 				<button
-					class="cursor-pointer lg:hidden"
+					class="cursor-pointer xl:hidden"
 					onclick={toggleInfo}
 					type="button"
 					aria-label={isShowInfo ? 'Показати інформацію' : 'Сховати інформацію'}

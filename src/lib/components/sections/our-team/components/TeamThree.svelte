@@ -7,35 +7,42 @@
 </script>
 
 <Fade>
-	<div class="flex justify-between">
+	<div class="team-container">
 		<picture class="max-w-full">
 			<source srcset="/img/our-team-three.webp" type="image/webp" />
-			<img loading="lazy" width="510" height="596" src="/img/our-team-three.jpg" alt="Team three" />
+			<img
+				class="team-img"
+				loading="lazy"
+				width="510"
+				height="596"
+				src="/img/our-team-three.jpg"
+				alt="Team three"
+			/>
 		</picture>
 
-		<div class="color-292424 w-1/2">
-			<h6 class="team-title mb-2.5">Дмитро Попроцький</h6>
+		<div class="color-292424 w-1/2 max-lg:w-full max-lg:text-center">
+			<h6 class="team-title">Дмитро Попроцький</h6>
 
-			<span class="color-cab18a mb-7 inline-block text-xl"> Адвокат </span>
+			<span class="team-subtitle"> Адвокат </span>
 
-			<p class="mb-5 text-center 2xl:text-left">
+			<p class="our-team-p">
 				<span class="font-semibold">Професійний досвід:</span>
-				<br class="hidden 2xl:block" />
+				<br />
 				Дмитро Попроцький веде адвокатську практику з 2008 року. За цей час він здобув значний досвід
 				у різних галузях права, зокрема у господарському, цивільному та сімейному праві.
 			</p>
 
-			<div class="max-lg:hidden">
-				<p class="mb-5 text-center 2xl:text-left">
+			<div class="max-xl:hidden">
+				<p class="our-team-p">
 					<span class="font-semibold">Спеціалізація:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Дмитро спеціалізується на господарському та цивільному судових процесах, допомагаючи клієнтам
 					ефективно вирішувати правові питання, пов'язані з бізнесом та особистими справами.
 				</p>
 
-				<p class="text-center 2xl:text-left">
+				<p class="our-team-p">
 					<span class="font-semibold">Чому обрати Дмитра:</span>
-					<br class="hidden 2xl:block" />
+					<br />
 					Завдяки багаторічному досвіду та глибоким знанням, Дмитро Попроцький пропонує своїм клієнтам
 					професійний підхід та надійну правову підтримку. Його компетентність і відповідальність гарантують
 					успішне вирішення навіть найскладніших юридичних питань.
@@ -45,17 +52,17 @@
 			<div class="max-md:visible">
 				{#if isShowInfo}
 					<div transition:slide>
-						<div transition:fade>
-							<p class="mb-5 text-center 2xl:text-left">
+						<div class="flex flex-col" transition:fade>
+							<p class="our-team-p">
 								<span class="font-semibold">Спеціалізація:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Дмитро спеціалізується на господарському та цивільному судових процесах, допомагаючи
 								клієнтам ефективно вирішувати правові питання, пов'язані з бізнесом та особистими справами.
 							</p>
 
-							<p class="text-center 2xl:text-left">
+							<p class="our-team-p">
 								<span class="font-semibold">Чому обрати Дмитра:</span>
-								<br class="hidden 2xl:block" />
+								<br />
 								Завдяки багаторічному досвіду та глибоким знанням, Дмитро Попроцький пропонує своїм клієнтам
 								професійний підхід та надійну правову підтримку. Його компетентність і відповідальність
 								гарантують успішне вирішення навіть найскладніших юридичних питань.
@@ -65,7 +72,7 @@
 				{/if}
 
 				<button
-					class="cursor-pointer lg:hidden"
+					class="cursor-pointer xl:hidden"
 					onclick={toggleInfo}
 					type="button"
 					aria-label={isShowInfo ? 'Показати інформацію' : 'Сховати інформацію'}

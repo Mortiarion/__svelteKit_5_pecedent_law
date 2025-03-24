@@ -32,7 +32,7 @@
 				професійної діяльності, вона вже встигла зарекомендувати себе як висококваліфікований фахівець.
 			</p>
 
-			<div class="max-lg:hidden">
+			<div class="max-xl:hidden">
 				<p class="our-team-p">
 					<span class="font-semibold">Спеціалізація:</span>
 					<br />
@@ -61,7 +61,7 @@
 			<div class="max-md:visible">
 				{#if isShowInfo}
 					<div transition:slide>
-						<div transition:fade>
+						<div class="flex flex-col" transition:fade>
 							<p class="our-team-p">
 								<span class="font-semibold">Спеціалізація:</span>
 								<br />
@@ -90,7 +90,7 @@
 				{/if}
 
 				<button
-					class="cursor-pointer lg:hidden"
+					class="cursor-pointer xl:hidden"
 					onclick={toggleInfo}
 					type="button"
 					aria-label={isShowInfo ? 'Показати інформацію' : 'Сховати інформацію'}

@@ -147,10 +147,10 @@
 					<div transition:fade>
 						<ul>
 							{#each ourServices[selectedCategory] as service}
-								<li>
+								<li class="max-md:flex-col max-md:text-center p-5 pr-14 max-md:p-5">
 									{service}
 
-									<button type="button"> Отримати консультацію </button>
+									<button class=" text-nowrap" type="button"> Отримати консультацію </button>
 								</li>
 							{/each}
 						</ul>
@@ -210,7 +210,7 @@
 							7px 4px 8px rgba(138, 133, 133, 0.09),
 							2px 1px 4px rgba(138, 133, 133, 0.1);
 						border-radius: 20px;
-						padding: 20px 60px 20px 20px;
+						/* padding: 20px 60px 20px 20px; */
 
 						> button {
 							cursor: pointer;

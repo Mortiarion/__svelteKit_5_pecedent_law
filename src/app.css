@@ -66,6 +66,10 @@
 	.team-container {
 		@apply flex justify-between gap-40 px-5 max-xl:gap-20 max-lg:flex-col max-lg:items-center;
 	}
+	
+	.team-container-reverse {
+		@apply flex justify-between gap-40 px-5 max-xl:gap-20 max-lg:items-center max-lg:flex-col-reverse;
+	}
 
 	.color-292424 {
 		color: #292424;
@@ -80,6 +84,7 @@
 		width: 100%;
 		max-height: 596px;
 		height: 100%;
+		@apply max-xl:object-cover;
 	}
 }
 
