@@ -125,7 +125,7 @@
 
 <section id="our-serveces">
 	<div class="container">
-		<div>
+		<div class="max-md:text-sm">
 			<h6 class="main-title mb-24">Наші послуги</h6>
 
 			<div class="category">
@@ -150,7 +150,7 @@
 								<li class="max-md:flex-col max-md:text-center p-5 pr-14 max-md:p-5">
 									{service}
 
-									<button class=" text-nowrap" type="button"> Отримати консультацію </button>
+									<button class="text-nowrap" type="button"> Отримати консультацію </button>
 								</li>
 							{/each}
 						</ul>
@@ -190,6 +190,10 @@
 							@media (hover: hover) {
 								background-color: var(--color-cab18a);
 							}
+						}
+
+						&:active {
+							background-color: var(--color-cab18a);
 						}
 					}
 				}
